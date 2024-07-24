@@ -3,7 +3,7 @@ const ProductsModel = require("./../model/ProductsModel")
 
 module.exports.get_products = async (req, res) => {
   try {
-    const { page = 1, limit = 8 } = req.query; // Default to page 1, 10 items per page
+    const { page = 1, limit = 8 } = req.query;
     const data = await ProductsModel.find()
       .limit(limit * 1)
       .skip((page - 1) * limit)
